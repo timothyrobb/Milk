@@ -7,12 +7,41 @@
 //
 
 #import "MilkAppDelegate.h"
+#import "List.h"
+#import "Product.h"
 
 @implementation MilkAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	[TestFlight takeOff:@"dc1ea7a7-e4b3-4dc6-b1e3-8fbd18f34028"];
+    [MagicalRecord setupAutoMigratingCoreDataStack];
+    
+    List *testList1 = [List createEntity];
+    testList1.title = @"Weekly";
+    
+    List *testList2 = [List createEntity];
+    testList2.title = @"Party";
+    
+    Product *testProduct1 = [Product createEntity];
+    testProduct1.name = @"Chocolate";
+    testProduct1.value = @5.00;
+    [testList1 addProductsObject:testProduct1];
+    
+    Product *testProduct2 = [Product createEntity];
+    testProduct2.name = @"Macbook Pro 15\" 2.2GHz 720GB 8GB DDR3";
+    testProduct2.value = @3502.23;
+    [testList1 addProductsObject:testProduct2];
+    
+    Product *testProduct3 = [Product createEntity];
+    testProduct3.name = @"Tomatoes";
+    testProduct3.value = @1.72;
+    [testList1 addProductsObject:testProduct3];
+    
+    Product *testProduct4 = [Product createEntity];
+    testProduct4.name = @"Baked Beans";
+    testProduct4.value = @0.71;
+    [testList2 addProductsObject:testProduct4];
+
     return YES;
 }
 							

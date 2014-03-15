@@ -14,13 +14,21 @@
 		9093DD2F18D3D458004A6CC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9093DD2E18D3D458004A6CC5 /* main.m */; };
 		9093DD3318D3D458004A6CC5 /* MilkAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9093DD3218D3D458004A6CC5 /* MilkAppDelegate.m */; };
 		9093DD3618D3D458004A6CC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9093DD3418D3D458004A6CC5 /* Main.storyboard */; };
-		9093DD3918D3D458004A6CC5 /* MilkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9093DD3818D3D458004A6CC5 /* MilkViewController.m */; };
+		9093DD3918D3D458004A6CC5 /* MilkListListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9093DD3818D3D458004A6CC5 /* MilkListListViewController.m */; };
 		9093DD3B18D3D458004A6CC5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9093DD3A18D3D458004A6CC5 /* Images.xcassets */; };
 		9093DD4218D3D458004A6CC5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9093DD4118D3D458004A6CC5 /* XCTest.framework */; };
 		9093DD4318D3D458004A6CC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9093DD2218D3D458004A6CC5 /* Foundation.framework */; };
 		9093DD4418D3D458004A6CC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9093DD2618D3D458004A6CC5 /* UIKit.framework */; };
 		9093DD4C18D3D458004A6CC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9093DD4A18D3D458004A6CC5 /* InfoPlist.strings */; };
 		9093DD4E18D3D458004A6CC5 /* MilkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9093DD4D18D3D458004A6CC5 /* MilkTests.m */; };
+		9093DD5918D3DF7B004A6CC5 /* MilkListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9093DD5818D3DF7B004A6CC5 /* MilkListDetailViewController.m */; };
+		9093DD6018D3DFF4004A6CC5 /* Milk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9093DD5E18D3DFF4004A6CC5 /* Milk.xcdatamodeld */; };
+		9093DD6318D3E0DB004A6CC5 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 9093DD6218D3E0DB004A6CC5 /* List.m */; };
+		9093DD6618D3E0DC004A6CC5 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 9093DD6518D3E0DC004A6CC5 /* Product.m */; };
+		9093DD6A18D425D8004A6CC5 /* MilkProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9093DD6918D425D8004A6CC5 /* MilkProductTableViewCell.m */; };
+		9093DD6C18D4317F004A6CC5 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9093DD6B18D4317F004A6CC5 /* Reveal.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		9093DD7318D436CC004A6CC5 /* MilkProductTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9093DD7218D436CC004A6CC5 /* MilkProductTextField.m */; };
+		BF604BEE192C40098F7DE349 /* libPods-Milk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D373D4B4054B6D852AF791 /* libPods-Milk.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55D373D4B4054B6D852AF791 /* libPods-Milk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Milk.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BAEFA7F02124001B6C7E71A /* Pods-Milk.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milk.xcconfig"; path = "Pods/Pods-Milk.xcconfig"; sourceTree = "<group>"; };
 		9093DD1F18D3D458004A6CC5 /* Milk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9093DD2218D3D458004A6CC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9093DD2418D3D458004A6CC5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,14 +55,26 @@
 		9093DD3118D3D458004A6CC5 /* MilkAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MilkAppDelegate.h; sourceTree = "<group>"; };
 		9093DD3218D3D458004A6CC5 /* MilkAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MilkAppDelegate.m; sourceTree = "<group>"; };
 		9093DD3518D3D458004A6CC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9093DD3718D3D458004A6CC5 /* MilkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MilkViewController.h; sourceTree = "<group>"; };
-		9093DD3818D3D458004A6CC5 /* MilkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MilkViewController.m; sourceTree = "<group>"; };
+		9093DD3718D3D458004A6CC5 /* MilkListListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MilkListListViewController.h; sourceTree = "<group>"; };
+		9093DD3818D3D458004A6CC5 /* MilkListListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MilkListListViewController.m; sourceTree = "<group>"; };
 		9093DD3A18D3D458004A6CC5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9093DD4018D3D458004A6CC5 /* MilkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MilkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9093DD4118D3D458004A6CC5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		9093DD4918D3D458004A6CC5 /* MilkTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MilkTests-Info.plist"; sourceTree = "<group>"; };
 		9093DD4B18D3D458004A6CC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9093DD4D18D3D458004A6CC5 /* MilkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MilkTests.m; sourceTree = "<group>"; };
+		9093DD5718D3DF7B004A6CC5 /* MilkListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MilkListDetailViewController.h; sourceTree = "<group>"; };
+		9093DD5818D3DF7B004A6CC5 /* MilkListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MilkListDetailViewController.m; sourceTree = "<group>"; };
+		9093DD5F18D3DFF4004A6CC5 /* Milk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Milk.xcdatamodel; sourceTree = "<group>"; };
+		9093DD6118D3E0DB004A6CC5 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		9093DD6218D3E0DB004A6CC5 /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
+		9093DD6418D3E0DC004A6CC5 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		9093DD6518D3E0DC004A6CC5 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		9093DD6818D425D8004A6CC5 /* MilkProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MilkProductTableViewCell.h; sourceTree = "<group>"; };
+		9093DD6918D425D8004A6CC5 /* MilkProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MilkProductTableViewCell.m; sourceTree = "<group>"; };
+		9093DD6B18D4317F004A6CC5 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = "../../../../Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/Reveal.framework"; sourceTree = "<group>"; };
+		9093DD7118D436CC004A6CC5 /* MilkProductTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MilkProductTextField.h; sourceTree = "<group>"; };
+		9093DD7218D436CC004A6CC5 /* MilkProductTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MilkProductTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +84,9 @@
 			files = (
 				9093DD2518D3D458004A6CC5 /* CoreGraphics.framework in Frameworks */,
 				9093DD2718D3D458004A6CC5 /* UIKit.framework in Frameworks */,
+				9093DD6C18D4317F004A6CC5 /* Reveal.framework in Frameworks */,
 				9093DD2318D3D458004A6CC5 /* Foundation.framework in Frameworks */,
+				BF604BEE192C40098F7DE349 /* libPods-Milk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +110,7 @@
 				9093DD4718D3D458004A6CC5 /* MilkTests */,
 				9093DD2118D3D458004A6CC5 /* Frameworks */,
 				9093DD2018D3D458004A6CC5 /* Products */,
+				5BAEFA7F02124001B6C7E71A /* Pods-Milk.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +126,12 @@
 		9093DD2118D3D458004A6CC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9093DD6B18D4317F004A6CC5 /* Reveal.framework */,
 				9093DD2218D3D458004A6CC5 /* Foundation.framework */,
 				9093DD2418D3D458004A6CC5 /* CoreGraphics.framework */,
 				9093DD2618D3D458004A6CC5 /* UIKit.framework */,
 				9093DD4118D3D458004A6CC5 /* XCTest.framework */,
+				55D373D4B4054B6D852AF791 /* libPods-Milk.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,12 +139,17 @@
 		9093DD2818D3D458004A6CC5 /* Milk */ = {
 			isa = PBXGroup;
 			children = (
-				9093DD3118D3D458004A6CC5 /* MilkAppDelegate.h */,
-				9093DD3218D3D458004A6CC5 /* MilkAppDelegate.m */,
 				9093DD3418D3D458004A6CC5 /* Main.storyboard */,
-				9093DD3718D3D458004A6CC5 /* MilkViewController.h */,
-				9093DD3818D3D458004A6CC5 /* MilkViewController.m */,
+				9093DD3718D3D458004A6CC5 /* MilkListListViewController.h */,
+				9093DD3818D3D458004A6CC5 /* MilkListListViewController.m */,
+				9093DD5718D3DF7B004A6CC5 /* MilkListDetailViewController.h */,
+				9093DD5818D3DF7B004A6CC5 /* MilkListDetailViewController.m */,
+				9093DD6818D425D8004A6CC5 /* MilkProductTableViewCell.h */,
+				9093DD6918D425D8004A6CC5 /* MilkProductTableViewCell.m */,
+				9093DD7118D436CC004A6CC5 /* MilkProductTextField.h */,
+				9093DD7218D436CC004A6CC5 /* MilkProductTextField.m */,
 				9093DD3A18D3D458004A6CC5 /* Images.xcassets */,
+				9093DD6718D3E0E6004A6CC5 /* Data */,
 				9093DD2918D3D458004A6CC5 /* Supporting Files */,
 			);
 			path = Milk;
@@ -126,6 +158,8 @@
 		9093DD2918D3D458004A6CC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9093DD3118D3D458004A6CC5 /* MilkAppDelegate.h */,
+				9093DD3218D3D458004A6CC5 /* MilkAppDelegate.m */,
 				9093DD2A18D3D458004A6CC5 /* Milk-Info.plist */,
 				9093DD2B18D3D458004A6CC5 /* InfoPlist.strings */,
 				9093DD2E18D3D458004A6CC5 /* main.m */,
@@ -152,6 +186,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9093DD6718D3E0E6004A6CC5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9093DD5E18D3DFF4004A6CC5 /* Milk.xcdatamodeld */,
+				9093DD6118D3E0DB004A6CC5 /* List.h */,
+				9093DD6218D3E0DB004A6CC5 /* List.m */,
+				9093DD6418D3E0DC004A6CC5 /* Product.h */,
+				9093DD6518D3E0DC004A6CC5 /* Product.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9093DD5118D3D458004A6CC5 /* Build configuration list for PBXNativeTarget "Milk" */;
 			buildPhases = (
+				3D375303633C45D8A4CF089F /* Check Pods Manifest.lock */,
 				9093DD1B18D3D458004A6CC5 /* Sources */,
 				9093DD1C18D3D458004A6CC5 /* Frameworks */,
 				9093DD1D18D3D458004A6CC5 /* Resources */,
+				D03C93CAB3DB451DB887E45B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,13 +293,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3D375303633C45D8A4CF089F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D03C93CAB3DB451DB887E45B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Milk-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9093DD1B18D3D458004A6CC5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9093DD6618D3E0DC004A6CC5 /* Product.m in Sources */,
+				9093DD5918D3DF7B004A6CC5 /* MilkListDetailViewController.m in Sources */,
 				9093DD2F18D3D458004A6CC5 /* main.m in Sources */,
-				9093DD3918D3D458004A6CC5 /* MilkViewController.m in Sources */,
+				9093DD6018D3DFF4004A6CC5 /* Milk.xcdatamodeld in Sources */,
+				9093DD7318D436CC004A6CC5 /* MilkProductTextField.m in Sources */,
+				9093DD6318D3E0DB004A6CC5 /* List.m in Sources */,
+				9093DD3918D3D458004A6CC5 /* MilkListListViewController.m in Sources */,
+				9093DD6A18D425D8004A6CC5 /* MilkProductTableViewCell.m in Sources */,
 				9093DD3318D3D458004A6CC5 /* MilkAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,9 +461,14 @@
 		};
 		9093DD5218D3D458004A6CC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BAEFA7F02124001B6C7E71A /* Pods-Milk.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Reveal.app/Contents/SharedSupport/iOS-Libraries",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Milk/Milk-Prefix.pch";
 				INFOPLIST_FILE = "Milk/Milk-Info.plist";
@@ -387,9 +479,14 @@
 		};
 		9093DD5318D3D458004A6CC5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BAEFA7F02124001B6C7E71A /* Pods-Milk.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Reveal.app/Contents/SharedSupport/iOS-Libraries",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Milk/Milk-Prefix.pch";
 				INFOPLIST_FILE = "Milk/Milk-Info.plist";
@@ -457,6 +554,7 @@
 				9093DD5318D3D458004A6CC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9093DD5418D3D458004A6CC5 /* Build configuration list for PBXNativeTarget "MilkTests" */ = {
 			isa = XCConfigurationList;
@@ -465,8 +563,22 @@
 				9093DD5618D3D458004A6CC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9093DD5E18D3DFF4004A6CC5 /* Milk.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9093DD5F18D3DFF4004A6CC5 /* Milk.xcdatamodel */,
+			);
+			currentVersion = 9093DD5F18D3DFF4004A6CC5 /* Milk.xcdatamodel */;
+			path = Milk.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9093DD1718D3D458004A6CC5 /* Project object */;
 }

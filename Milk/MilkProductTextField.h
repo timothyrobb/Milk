@@ -1,5 +1,5 @@
 //
-//  MilkViewController.h
+//  MilkProductTextField.h
 //  Milk
 //
 //  Created by Timothy Robb on 15/03/2014.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MilkViewController : UIViewController
+@interface MilkProductTextField : UITextField
 
 @end

@@ -13,4 +13,11 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+	// Cocoapods
+    #import <TestFlightSDK/TestFlight.h>
+
+    #define MR_SHORTHAND // Enable MagicalRecord shorthand (i.e `createEntity` rather than `MR_createEntity`)
+    #define MR_ENABLE_ACTIVE_RECORD_LOGGING 0 // Disable MagicalRecord verbose logging
+    #import <MagicalRecord/CoreData+MagicalRecord.h>
 #endif
