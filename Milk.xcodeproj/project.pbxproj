@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9093DD2318D3D458004A6CC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9093DD2218D3D458004A6CC5 /* Foundation.framework */; };
+		9093DD2518D3D458004A6CC5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9093DD2418D3D458004A6CC5 /* CoreGraphics.framework */; };
+		9093DD2718D3D458004A6CC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9093DD2618D3D458004A6CC5 /* UIKit.framework */; };
+		9093DD2D18D3D458004A6CC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9093DD2B18D3D458004A6CC5 /* InfoPlist.strings */; };
+		9093DD2F18D3D458004A6CC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9093DD2E18D3D458004A6CC5 /* main.m */; };
+		9093DD3318D3D458004A6CC5 /* MilkAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9093DD3218D3D458004A6CC5 /* MilkAppDelegate.m */; };
+		9093DD3618D3D458004A6CC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9093DD3418D3D458004A6CC5 /* Main.storyboard */; };
+		9093DD3918D3D458004A6CC5 /* MilkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9093DD3818D3D458004A6CC5 /* MilkViewController.m */; };
+		9093DD3B18D3D458004A6CC5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9093DD3A18D3D458004A6CC5 /* Images.xcassets */; };
+		9093DD4218D3D458004A6CC5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9093DD4118D3D458004A6CC5 /* XCTest.framework */; };
+		9093DD4318D3D458004A6CC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9093DD2218D3D458004A6CC5 /* Foundation.framework */; };
+		9093DD4418D3D458004A6CC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9093DD2618D3D458004A6CC5 /* UIKit.framework */; };
+		9093DD4C18D3D458004A6CC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9093DD4A18D3D458004A6CC5 /* InfoPlist.strings */; };
+		9093DD4E18D3D458004A6CC5 /* MilkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9093DD4D18D3D458004A6CC5 /* MilkTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9093DD4518D3D458004A6CC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9093DD1718D3D458004A6CC5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9093DD1E18D3D458004A6CC5;
+			remoteInfo = Milk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9093DD1F18D3D458004A6CC5 /* Milk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9093DD2218D3D458004A6CC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9093DD2418D3D458004A6CC5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9093DD2618D3D458004A6CC5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9093DD2A18D3D458004A6CC5 /* Milk-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Milk-Info.plist"; sourceTree = "<group>"; };
+		9093DD2C18D3D458004A6CC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9093DD2E18D3D458004A6CC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9093DD3018D3D458004A6CC5 /* Milk-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Milk-Prefix.pch"; sourceTree = "<group>"; };
+		9093DD3118D3D458004A6CC5 /* MilkAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MilkAppDelegate.h; sourceTree = "<group>"; };
+		9093DD3218D3D458004A6CC5 /* MilkAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MilkAppDelegate.m; sourceTree = "<group>"; };
+		9093DD3518D3D458004A6CC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9093DD3718D3D458004A6CC5 /* MilkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MilkViewController.h; sourceTree = "<group>"; };
+		9093DD3818D3D458004A6CC5 /* MilkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MilkViewController.m; sourceTree = "<group>"; };
+		9093DD3A18D3D458004A6CC5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9093DD4018D3D458004A6CC5 /* MilkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MilkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9093DD4118D3D458004A6CC5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9093DD4918D3D458004A6CC5 /* MilkTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MilkTests-Info.plist"; sourceTree = "<group>"; };
+		9093DD4B18D3D458004A6CC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9093DD4D18D3D458004A6CC5 /* MilkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MilkTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9093DD1C18D3D458004A6CC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9093DD2518D3D458004A6CC5 /* CoreGraphics.framework in Frameworks */,
+				9093DD2718D3D458004A6CC5 /* UIKit.framework in Frameworks */,
+				9093DD2318D3D458004A6CC5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9093DD3D18D3D458004A6CC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9093DD4218D3D458004A6CC5 /* XCTest.framework in Frameworks */,
+				9093DD4418D3D458004A6CC5 /* UIKit.framework in Frameworks */,
+				9093DD4318D3D458004A6CC5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9093DD1618D3D458004A6CC5 = {
+			isa = PBXGroup;
+			children = (
+				9093DD2818D3D458004A6CC5 /* Milk */,
+				9093DD4718D3D458004A6CC5 /* MilkTests */,
+				9093DD2118D3D458004A6CC5 /* Frameworks */,
+				9093DD2018D3D458004A6CC5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9093DD2018D3D458004A6CC5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9093DD1F18D3D458004A6CC5 /* Milk.app */,
+				9093DD4018D3D458004A6CC5 /* MilkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9093DD2118D3D458004A6CC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9093DD2218D3D458004A6CC5 /* Foundation.framework */,
+				9093DD2418D3D458004A6CC5 /* CoreGraphics.framework */,
+				9093DD2618D3D458004A6CC5 /* UIKit.framework */,
+				9093DD4118D3D458004A6CC5 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9093DD2818D3D458004A6CC5 /* Milk */ = {
+			isa = PBXGroup;
+			children = (
+				9093DD3118D3D458004A6CC5 /* MilkAppDelegate.h */,
+				9093DD3218D3D458004A6CC5 /* MilkAppDelegate.m */,
+				9093DD3418D3D458004A6CC5 /* Main.storyboard */,
+				9093DD3718D3D458004A6CC5 /* MilkViewController.h */,
+				9093DD3818D3D458004A6CC5 /* MilkViewController.m */,
+				9093DD3A18D3D458004A6CC5 /* Images.xcassets */,
+				9093DD2918D3D458004A6CC5 /* Supporting Files */,
+			);
+			path = Milk;
+			sourceTree = "<group>";
+		};
+		9093DD2918D3D458004A6CC5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9093DD2A18D3D458004A6CC5 /* Milk-Info.plist */,
+				9093DD2B18D3D458004A6CC5 /* InfoPlist.strings */,
+				9093DD2E18D3D458004A6CC5 /* main.m */,
+				9093DD3018D3D458004A6CC5 /* Milk-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9093DD4718D3D458004A6CC5 /* MilkTests */ = {
+			isa = PBXGroup;
+			children = (
+				9093DD4D18D3D458004A6CC5 /* MilkTests.m */,
+				9093DD4818D3D458004A6CC5 /* Supporting Files */,
+			);
+			path = MilkTests;
+			sourceTree = "<group>";
+		};
+		9093DD4818D3D458004A6CC5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9093DD4918D3D458004A6CC5 /* MilkTests-Info.plist */,
+				9093DD4A18D3D458004A6CC5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9093DD1E18D3D458004A6CC5 /* Milk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9093DD5118D3D458004A6CC5 /* Build configuration list for PBXNativeTarget "Milk" */;
+			buildPhases = (
+				9093DD1B18D3D458004A6CC5 /* Sources */,
+				9093DD1C18D3D458004A6CC5 /* Frameworks */,
+				9093DD1D18D3D458004A6CC5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Milk;
+			productName = Milk;
+			productReference = 9093DD1F18D3D458004A6CC5 /* Milk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9093DD3F18D3D458004A6CC5 /* MilkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9093DD5418D3D458004A6CC5 /* Build configuration list for PBXNativeTarget "MilkTests" */;
+			buildPhases = (
+				9093DD3C18D3D458004A6CC5 /* Sources */,
+				9093DD3D18D3D458004A6CC5 /* Frameworks */,
+				9093DD3E18D3D458004A6CC5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9093DD4618D3D458004A6CC5 /* PBXTargetDependency */,
+			);
+			name = MilkTests;
+			productName = MilkTests;
+			productReference = 9093DD4018D3D458004A6CC5 /* MilkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9093DD1718D3D458004A6CC5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Milk;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "The Milk Co.";
+				TargetAttributes = {
+					9093DD3F18D3D458004A6CC5 = {
+						TestTargetID = 9093DD1E18D3D458004A6CC5;
+					};
+				};
+			};
+			buildConfigurationList = 9093DD1A18D3D458004A6CC5 /* Build configuration list for PBXProject "Milk" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9093DD1618D3D458004A6CC5;
+			productRefGroup = 9093DD2018D3D458004A6CC5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9093DD1E18D3D458004A6CC5 /* Milk */,
+				9093DD3F18D3D458004A6CC5 /* MilkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9093DD1D18D3D458004A6CC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9093DD3B18D3D458004A6CC5 /* Images.xcassets in Resources */,
+				9093DD2D18D3D458004A6CC5 /* InfoPlist.strings in Resources */,
+				9093DD3618D3D458004A6CC5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9093DD3E18D3D458004A6CC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9093DD4C18D3D458004A6CC5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9093DD1B18D3D458004A6CC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9093DD2F18D3D458004A6CC5 /* main.m in Sources */,
+				9093DD3918D3D458004A6CC5 /* MilkViewController.m in Sources */,
+				9093DD3318D3D458004A6CC5 /* MilkAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9093DD3C18D3D458004A6CC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9093DD4E18D3D458004A6CC5 /* MilkTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9093DD4618D3D458004A6CC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9093DD1E18D3D458004A6CC5 /* Milk */;
+			targetProxy = 9093DD4518D3D458004A6CC5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9093DD2B18D3D458004A6CC5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9093DD2C18D3D458004A6CC5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9093DD3418D3D458004A6CC5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9093DD3518D3D458004A6CC5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9093DD4A18D3D458004A6CC5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9093DD4B18D3D458004A6CC5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9093DD4F18D3D458004A6CC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9093DD5018D3D458004A6CC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9093DD5218D3D458004A6CC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Milk/Milk-Prefix.pch";
+				INFOPLIST_FILE = "Milk/Milk-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9093DD5318D3D458004A6CC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Milk/Milk-Prefix.pch";
+				INFOPLIST_FILE = "Milk/Milk-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9093DD5518D3D458004A6CC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Milk.app/Milk";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Milk/Milk-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MilkTests/MilkTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		9093DD5618D3D458004A6CC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Milk.app/Milk";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Milk/Milk-Prefix.pch";
+				INFOPLIST_FILE = "MilkTests/MilkTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9093DD1A18D3D458004A6CC5 /* Build configuration list for PBXProject "Milk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9093DD4F18D3D458004A6CC5 /* Debug */,
+				9093DD5018D3D458004A6CC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9093DD5118D3D458004A6CC5 /* Build configuration list for PBXNativeTarget "Milk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9093DD5218D3D458004A6CC5 /* Debug */,
+				9093DD5318D3D458004A6CC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9093DD5418D3D458004A6CC5 /* Build configuration list for PBXNativeTarget "MilkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9093DD5518D3D458004A6CC5 /* Debug */,
+				9093DD5618D3D458004A6CC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9093DD1718D3D458004A6CC5 /* Project object */;
+}
