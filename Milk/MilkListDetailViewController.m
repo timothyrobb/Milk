@@ -202,30 +202,38 @@
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     self.activeTextField = textField;
-    Product *product = self.products[textField.tag-1];
     
     UIToolbar *toolbar = [[UIToolbar alloc] init];
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelEditing:)];
     UIBarButtonItem *applyButton = [[UIBarButtonItem alloc] initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(applyEditing:)];
     
-    UIStepper *stepper = [[UIStepper alloc] init];
-    stepper.tintColor = [UIColor whiteColor];
-    stepper.value = product.quantity.doubleValue;
-    stepper.tag = textField.tag;
-    [stepper addTarget:self action:@selector(stepperStepped:) forControlEvents:UIControlEventValueChanged];
-    UIBarButtonItem *stepperItem = [[UIBarButtonItem alloc] initWithCustomView:stepper];
-    
     toolbar.barTintColor = [UIColor colorWithRed:57.0/255.0 green:216.0/255.0 blue:193.0/255.0 alpha:1];
     cancelButton.tintColor = [UIColor whiteColor];
     applyButton.tintColor = [UIColor whiteColor];
     
-    toolbar.items = [NSArray arrayWithObjects:
-                     cancelButton,
-                     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
-                     stepperItem,
-                     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
-                     applyButton,
-                     nil];
+    NSArray *items = @[cancelButton,
+                      [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                      applyButton];
+    
+    if (textField.tag) {
+        Product *product = self.products[textField.tag-1];
+        
+        UIStepper *stepper = [[UIStepper alloc] init];
+        stepper.tintColor = [UIColor whiteColor];
+        stepper.value = product.quantity.doubleValue;
+        stepper.tag = textField.tag;
+        [stepper addTarget:self action:@selector(stepperStepped:) forControlEvents:UIControlEventValueChanged];
+        UIBarButtonItem *stepperItem = [[UIBarButtonItem alloc] initWithCustomView:stepper];
+        
+        items = @[cancelButton,
+                  [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                  stepperItem,
+                  [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                  applyButton];
+    }
+    
+    
+    toolbar.items = items;
     [toolbar sizeToFit];
     textField.inputAccessoryView = toolbar;
     
