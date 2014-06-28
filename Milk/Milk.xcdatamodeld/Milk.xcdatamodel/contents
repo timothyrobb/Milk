@@ -3,17 +3,19 @@
     <entity name="List" representedClassName="List" syncable="YES">
         <attribute name="createdDate" attributeType="Date" syncable="YES"/>
         <attribute name="modifiedDate" attributeType="Date" syncable="YES"/>
-        <attribute name="title" attributeType="String" syncable="YES"/>
+        <attribute name="title" attributeType="String" defaultValueString="List" syncable="YES"/>
         <relationship name="products" toMany="YES" deletionRule="Cascade" destinationEntity="Product" inverseName="list" inverseEntity="Product" syncable="YES"/>
     </entity>
     <entity name="Product" representedClassName="Product" syncable="YES">
         <attribute name="createdDate" attributeType="Date" syncable="YES"/>
-        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quantity" attributeType="Integer 64" minValueString="0" defaultValueString="1" syncable="YES"/>
+        <attribute name="userTotalValue" optional="YES" attributeType="Double" syncable="YES"/>
         <attribute name="value" attributeType="Float" defaultValueString="0" syncable="YES"/>
         <relationship name="list" maxCount="1" deletionRule="Nullify" destinationEntity="List" inverseName="products" inverseEntity="List" syncable="YES"/>
     </entity>
     <elements>
-        <element name="List" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="Product" positionX="-54" positionY="18" width="128" height="103"/>
+        <element name="List" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Product" positionX="-54" positionY="18" width="128" height="133"/>
     </elements>
 </model>

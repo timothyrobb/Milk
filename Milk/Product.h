@@ -17,6 +17,8 @@
 
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSNumber *value;
+@property (nonatomic, retain) NSNumber *quantity;
+@property (nonatomic, strong) NSNumber *totalValue;
 
 @property (nonatomic, retain) List *list;
 
