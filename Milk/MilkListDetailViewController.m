@@ -68,7 +68,7 @@
 
 #pragma mark - Actions
 
--(IBAction)stepperStepped:(UIStepper *)stepper {
+-(void)stepperStepped:(UIStepper *)stepper {
     MilkProductTableViewCell *cell = (MilkProductTableViewCell *)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:stepper.tag inSection:0]];
     Product *product = self.products[cell.tag-1];
     
