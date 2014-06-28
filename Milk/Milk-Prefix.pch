@@ -17,4 +17,6 @@
     #define MR_SHORTHAND // Enable MagicalRecord shorthand (i.e `createEntity` rather than `MR_createEntity`)
     #define MR_ENABLE_ACTIVE_RECORD_LOGGING 0 // Disable MagicalRecord verbose logging
     #import "CoreData+MagicalRecord.h"
+
+	#import "MilkColours+UIColor.h"
 #endif

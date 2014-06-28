@@ -207,7 +207,7 @@
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelEditing:)];
     UIBarButtonItem *applyButton = [[UIBarButtonItem alloc] initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(applyEditing:)];
     
-    toolbar.barTintColor = [UIColor colorWithRed:57.0/255.0 green:216.0/255.0 blue:193.0/255.0 alpha:1];
+    toolbar.barTintColor = [UIColor milkGreen];
     cancelButton.tintColor = [UIColor whiteColor];
     applyButton.tintColor = [UIColor whiteColor];
     

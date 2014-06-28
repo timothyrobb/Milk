@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9090C44A195EC09400DF3C25 /* MilkColours+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9090C449195EC09400DF3C25 /* MilkColours+UIColor.m */; };
 		9093DD2318D3D458004A6CC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9093DD2218D3D458004A6CC5 /* Foundation.framework */; };
 		9093DD2518D3D458004A6CC5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9093DD2418D3D458004A6CC5 /* CoreGraphics.framework */; };
 		9093DD2718D3D458004A6CC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9093DD2618D3D458004A6CC5 /* UIKit.framework */; };
@@ -67,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9090C448195EC09400DF3C25 /* MilkColours+UIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MilkColours+UIColor.h"; sourceTree = "<group>"; };
+		9090C449195EC09400DF3C25 /* MilkColours+UIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MilkColours+UIColor.m"; sourceTree = "<group>"; };
 		9093DD1F18D3D458004A6CC5 /* Milk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9093DD2218D3D458004A6CC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9093DD2418D3D458004A6CC5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -235,6 +238,8 @@
 		9093DD2918D3D458004A6CC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9090C448195EC09400DF3C25 /* MilkColours+UIColor.h */,
+				9090C449195EC09400DF3C25 /* MilkColours+UIColor.m */,
 				9093DD3118D3D458004A6CC5 /* MilkAppDelegate.h */,
 				9093DD3218D3D458004A6CC5 /* MilkAppDelegate.m */,
 				9093DD2A18D3D458004A6CC5 /* Milk-Info.plist */,
@@ -500,6 +505,7 @@
 				90F0F402195EA06D00C08177 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				9093DD3918D3D458004A6CC5 /* MilkListListViewController.m in Sources */,
 				9093DD6A18D425D8004A6CC5 /* MilkProductTableViewCell.m in Sources */,
+				9090C44A195EC09400DF3C25 /* MilkColours+UIColor.m in Sources */,
 				90F0F3F0195EA06D00C08177 /* NSString+MagicalDataImport.m in Sources */,
 				90F0F400195EA06D00C08177 /* MagicalRecord+Options.m in Sources */,
 				90F0F3F4195EA06D00C08177 /* NSManagedObject+MagicalRecord.m in Sources */,
