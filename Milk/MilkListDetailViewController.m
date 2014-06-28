@@ -34,9 +34,10 @@
     NSAssert(_list, @"Requires a List object on creation for display purposes");
     
     CGSize textSize = [_list.title sizeWithAttributes:nil];
-    self.titleField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, textSize.width, 44)];
+    self.titleField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, textSize.width * 1.6 + 10, 44)];
     _titleField.text = _list.title;
     _titleField.textColor = [UIColor blackColor];
+    _titleField.textAlignment = NSTextAlignmentCenter;
     _titleField.delegate = self;
     [_titleField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     
@@ -249,7 +250,7 @@
         _list.title = textField.text;
         
         CGRect frame = _titleField.frame;
-        frame.size.width = [_list.title sizeWithAttributes:nil].width;
+        frame.size.width = [_list.title sizeWithAttributes:nil].width * 1.6 + 10;
         _titleField.frame = frame;
         
         [_list.managedObjectContext saveToPersistentStoreAndWait];
@@ -287,7 +288,7 @@
 -(IBAction)textFieldDidChange:(UITextField *)textField {
     if (textField == _titleField) {
         CGRect frame = _titleField.frame;
-        frame.size.width = [_list.title sizeWithAttributes:nil].width;
+        frame.size.width = [_titleField.text sizeWithAttributes:nil].width * 1.6 + 10;
         _titleField.frame = frame;
         return;
     }
