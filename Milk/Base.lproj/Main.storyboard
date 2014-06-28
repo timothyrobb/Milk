@@ -169,7 +169,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="-1" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zg5-7l-cYC" userLabel="Name" customClass="MilkProductTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="-1" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zg5-7l-cYC" userLabel="Name" customClass="MilkProductTextField">
                                                     <rect key="frame" x="15" y="13" width="38" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="yes" returnKeyType="done"/>
@@ -178,7 +178,7 @@
                                                         <outlet property="delegate" destination="MEx-wd-4pq" id="PcM-DQ-tQZ"/>
                                                     </connections>
                                                 </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="-2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2.00" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I8u-Sa-MZI" userLabel="Value" customClass="MilkProductTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="-2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2.00" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I8u-Sa-MZI" userLabel="Value" customClass="MilkProductTextField">
                                                     <rect key="frame" x="238" y="13" width="38" height="21"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
