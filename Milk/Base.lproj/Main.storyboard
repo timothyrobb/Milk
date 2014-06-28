@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Zr4-8g-PNN">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
     </dependencies>
     <scenes>
@@ -162,7 +161,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.22352941179999999" green="0.84705882349999995" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="88" id="3tR-dS-vjs" userLabel="Product Cell" customClass="MilkProductTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductCell" id="3tR-dS-vjs" userLabel="Product Cell" customClass="MilkProductTableViewCell">
                                         <rect key="frame" x="0.0" y="66" width="320" height="88"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3tR-dS-vjs" id="LDQ-Lw-zYQ">
@@ -179,7 +178,7 @@
                                                     </connections>
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" tag="-2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2.00" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I8u-Sa-MZI" userLabel="Value" customClass="MilkProductTextField">
-                                                    <rect key="frame" x="267" y="13" width="38" height="21"/>
+                                                    <rect key="frame" x="238" y="13" width="38" height="21"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="yes" keyboardType="decimalPad" returnKeyType="done"/>
@@ -188,15 +187,8 @@
                                                         <outlet property="delegate" destination="MEx-wd-4pq" id="l5X-56-lvd"/>
                                                     </connections>
                                                 </textField>
-                                                <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="2147483647" translatesAutoresizingMaskIntoConstraints="NO" id="MLS-3y-XXU">
-                                                    <rect key="frame" x="15" y="45" width="94" height="29"/>
-                                                    <color key="tintColor" red="0.22352941179999999" green="0.84705882349999995" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <connections>
-                                                        <action selector="stepperStepped:" destination="MEx-wd-4pq" eventType="valueChanged" id="HnA-mv-kgI"/>
-                                                    </connections>
-                                                </stepper>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1x" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbq-wT-pPG">
-                                                    <rect key="frame" x="286" y="53" width="19" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbq-wT-pPG">
+                                                    <rect key="frame" x="281" y="13" width="24" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -204,20 +196,17 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="I8u-Sa-MZI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zg5-7l-cYC" secondAttribute="trailing" priority="750" id="0Mo-aN-6wR"/>
-                                                <constraint firstItem="MLS-3y-XXU" firstAttribute="leading" secondItem="LDQ-Lw-zYQ" secondAttribute="leading" constant="15" id="7xx-06-g7H"/>
                                                 <constraint firstItem="I8u-Sa-MZI" firstAttribute="top" secondItem="LDQ-Lw-zYQ" secondAttribute="top" constant="13" id="9TJ-65-oma"/>
                                                 <constraint firstItem="zg5-7l-cYC" firstAttribute="top" secondItem="LDQ-Lw-zYQ" secondAttribute="top" constant="13" id="Jm6-XK-bQv"/>
                                                 <constraint firstItem="zg5-7l-cYC" firstAttribute="leading" secondItem="LDQ-Lw-zYQ" secondAttribute="leading" constant="15" id="Vry-Wn-6CG"/>
-                                                <constraint firstAttribute="trailing" secondItem="I8u-Sa-MZI" secondAttribute="trailing" constant="15" id="W9q-Wz-6HR"/>
-                                                <constraint firstAttribute="bottom" secondItem="fbq-wT-pPG" secondAttribute="bottom" constant="13" id="i6Z-Ha-VwF"/>
+                                                <constraint firstItem="fbq-wT-pPG" firstAttribute="leading" secondItem="I8u-Sa-MZI" secondAttribute="trailing" constant="5" id="gzC-nG-NIu"/>
                                                 <constraint firstAttribute="trailing" secondItem="fbq-wT-pPG" secondAttribute="trailing" constant="15" id="pvx-ig-yf6"/>
-                                                <constraint firstAttribute="bottom" secondItem="MLS-3y-XXU" secondAttribute="bottom" constant="13" id="zN6-Xp-UPC"/>
+                                                <constraint firstItem="fbq-wT-pPG" firstAttribute="top" secondItem="LDQ-Lw-zYQ" secondAttribute="top" constant="13" id="ziM-6B-br0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="detailField" destination="I8u-Sa-MZI" id="vLr-go-12m"/>
                                             <outlet property="quantityValueLabel" destination="fbq-wT-pPG" id="WPe-BS-296"/>
-                                            <outlet property="stepper" destination="MLS-3y-XXU" id="CoM-Ex-T40"/>
                                             <outlet property="titleField" destination="zg5-7l-cYC" id="Nzc-d1-ZC7"/>
                                         </connections>
                                     </tableViewCell>

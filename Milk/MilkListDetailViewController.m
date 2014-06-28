@@ -71,7 +71,7 @@
     MilkProductTableViewCell *cell = (MilkProductTableViewCell *)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:stepper.tag inSection:0]];
     Product *product = self.products[cell.tag-1];
     
-    cell.quantityValueLabel.text = [NSString stringWithFormat:@"%.0fx",stepper.value];
+    cell.quantityValueLabel.text = [NSString stringWithFormat:@"x %.0f",stepper.value];
     product.quantity = @(stepper.value);
     [product.managedObjectContext saveToPersistentStoreAndWait];
     [self updateTotal];
@@ -98,7 +98,6 @@
         cell.titleField.tag = indexPath.row;
         cell.detailField.tag = indexPath.row;
         cell.quantityValueLabel.tag = indexPath.row;
-        cell.stepper.tag = indexPath.row;
         
         cell.titleField.text = product.name;
         
@@ -106,8 +105,7 @@
         [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
         cell.detailField.text = [numberFormatter stringFromNumber:product.value];
         
-        cell.quantityValueLabel.text = [NSString stringWithFormat:@"%.0fx",product.quantity.doubleValue];
-        cell.stepper.value = product.quantity.doubleValue;
+        cell.quantityValueLabel.text = [NSString stringWithFormat:@"x %.0f",product.quantity.doubleValue];
         
         return cell;
     }
@@ -164,11 +162,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        return 44;
-    } else {
-        return 88;
-    }
+    return 44;
 }
 
 #pragma mark - Text Field Delegate
@@ -208,20 +202,18 @@
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     self.activeTextField = textField;
-    
-    if (textField != _titleField) {
-        MilkProductTableViewCell *cell = (MilkProductTableViewCell *)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:textField.tag inSection:0]];
-        
-        if (textField == cell.titleField) {
-            cell.detailField.hidden = YES;
-        }
-        
-        [cell updateSize];
-    }
+    Product *product = self.products[textField.tag-1];
     
     UIToolbar *toolbar = [[UIToolbar alloc] init];
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelEditing:)];
     UIBarButtonItem *applyButton = [[UIBarButtonItem alloc] initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(applyEditing:)];
+    
+    UIStepper *stepper = [[UIStepper alloc] init];
+    stepper.tintColor = [UIColor whiteColor];
+    stepper.value = product.quantity.doubleValue;
+    stepper.tag = textField.tag;
+    [stepper addTarget:self action:@selector(stepperStepped:) forControlEvents:UIControlEventValueChanged];
+    UIBarButtonItem *stepperItem = [[UIBarButtonItem alloc] initWithCustomView:stepper];
     
     toolbar.barTintColor = [UIColor colorWithRed:57.0/255.0 green:216.0/255.0 blue:193.0/255.0 alpha:1];
     cancelButton.tintColor = [UIColor whiteColor];
@@ -229,6 +221,8 @@
     
     toolbar.items = [NSArray arrayWithObjects:
                      cancelButton,
+                     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                     stepperItem,
                      [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
                      applyButton,
                      nil];
@@ -260,7 +254,6 @@
     if (product) {
         if (textField == cell.titleField) {
             product.name = textField.text;
-            cell.detailField.hidden = NO;
         } else if (textField == cell.detailField) {
             NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
             [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
