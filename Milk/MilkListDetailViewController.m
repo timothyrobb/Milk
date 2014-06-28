@@ -53,14 +53,28 @@
 -(void)updateTotal {
     double total = 0.0;
     for (Product *product in _list.products) {
-        total += product.value.doubleValue;
+        total += product.totalValue.doubleValue;
     }
-    self.totalValueLabel.text = [NSString stringWithFormat:@"%.2f",total];
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    self.totalValueLabel.text = [numberFormatter stringFromNumber:@(total)];
 }
 
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated {
     [super setEditing:editing animated:animated];
     [_tableView setEditing:editing animated:animated];
+}
+
+#pragma mark - Actions
+
+-(IBAction)stepperStepped:(UIStepper *)stepper {
+    MilkProductTableViewCell *cell = (MilkProductTableViewCell *)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:stepper.tag inSection:0]];
+    Product *product = self.products[cell.tag-1];
+    
+    cell.quantityValueLabel.text = [NSString stringWithFormat:@"%.0fx",stepper.value];
+    product.quantity = @(stepper.value);
+    [product.managedObjectContext saveToPersistentStoreAndWait];
+    [self updateTotal];
 }
 
 #pragma mark - Table View Data Source
@@ -83,12 +97,17 @@
         cell.tag = indexPath.row;
         cell.titleField.tag = indexPath.row;
         cell.detailField.tag = indexPath.row;
+        cell.quantityValueLabel.tag = indexPath.row;
+        cell.stepper.tag = indexPath.row;
         
-        if (product.name && ![product.name isEqualToString:@""]) {
-            cell.titleField.text = product.name;
-        }
+        cell.titleField.text = product.name;
         
-        cell.detailField.text = [NSString stringWithFormat:@"%.2f",product.value.doubleValue];
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        cell.detailField.text = [numberFormatter stringFromNumber:product.value];
+        
+        cell.quantityValueLabel.text = [NSString stringWithFormat:@"%.0fx",product.quantity.doubleValue];
+        cell.stepper.value = product.quantity.doubleValue;
         
         return cell;
     }
@@ -111,9 +130,12 @@
         
         [_list removeProductsObject:product];
         [product deleteEntity];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
-        [self updateTotal];
-//        [product.managedObjectContext saveToPersistentStoreAndWait];
+        [product.managedObjectContext saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+            if (success) {
+                [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+                [self updateTotal];
+            }
+        }];
     }
 }
 
@@ -124,14 +146,28 @@
         NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
         Product *newProduct = [Product createEntity];
         [_list addProductsObject:newProduct];
-        [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationTop];
-        
-        MilkProductTableViewCell *newCell = (MilkProductTableViewCell *)[tableView cellForRowAtIndexPath:newIndexPath];
-        [newCell.detailField becomeFirstResponder];
+        [_list.managedObjectContext saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+            if (success) {
+                [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationTop];
+                
+                MilkProductTableViewCell *newCell = (MilkProductTableViewCell *)[tableView cellForRowAtIndexPath:newIndexPath];
+                [newCell.detailField becomeFirstResponder];
+            } else {
+            	NSLog(@"Error creating new product: %@",error.localizedDescription);
+            }
+        }];
     } else {
         MilkProductTableViewCell *cell = (MilkProductTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
         
         [cell.detailField becomeFirstResponder];
+    }
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return 44;
+    } else {
+        return 88;
     }
 }
 
@@ -152,9 +188,11 @@
         Product *product = self.products[cell.tag-1];
         
         if (_activeTextField == cell.titleField) {
-            _activeTextField.text = product.name;
+            cell.titleField.text = product.name;
         } else if (_activeTextField == cell.detailField) {
-            _activeTextField.text = [NSString stringWithFormat:@"%.2f",product.value.doubleValue];
+            NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+            [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+            cell.detailField.text = [numberFormatter stringFromNumber:product.value];
         }
         
         [cell updateSize];
@@ -164,7 +202,6 @@
 
 -(void)applyEditing:(UIBarButtonItem *)barButtonItem {
     if (_activeTextField) {
-        [self textFieldShouldEndEditing:_activeTextField];
         [_activeTextField resignFirstResponder];
     }
 }
@@ -213,6 +250,7 @@
         frame.size.width = [_list.title sizeWithAttributes:nil].width;
         _titleField.frame = frame;
         
+        [_list.managedObjectContext saveToPersistentStoreAndWait];
         return YES;
     }
     
@@ -224,15 +262,24 @@
             product.name = textField.text;
             cell.detailField.hidden = NO;
         } else if (textField == cell.detailField) {
-            textField.text = [NSString stringWithFormat:@"%.2f",textField.text.doubleValue];
-            [cell updateSize];
-            product.value = @(textField.text.doubleValue);
+            NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+            [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+            
+            NSNumber *finalNumber = [numberFormatter numberFromString:textField.text];
+            
+            if (!finalNumber) {
+                finalNumber = @(textField.text.doubleValue);
+            }
+            product.value = finalNumber;
+            textField.text = [numberFormatter stringFromNumber:finalNumber];
             
             [self updateTotal];
         }
+        
+        [cell updateSize];
+        [product.managedObjectContext saveToPersistentStoreAndWait];
     }
     
-//    [product.managedObjectContext saveToPersistentStoreAndWait];
     return YES;
 }
 

@@ -22,6 +22,7 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
 	[self reloadData];
+    [_tableView reloadData];
 }
 
 -(void)reloadData {
@@ -55,20 +56,39 @@
     }
 }
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return indexPath.row != 0;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        List *list = _lists[indexPath.row-1];
+        
+        [list deleteEntity];
+        [list.managedObjectContext saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+            if (success) {
+                [self reloadData];
+                [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+            }
+        }];
+    }
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITableViewCell*)cell {
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITableViewCell*)cell {
     MilkListDetailViewController *detailViewController = [segue destinationViewController];
+    NSIndexPath *indexPath = [_tableView indexPathForCell:cell];
     
     if ([cell.reuseIdentifier isEqualToString:@"CreateCell"]) {
         detailViewController.list = [List createEntity];
+        [detailViewController.list.managedObjectContext saveToPersistentStoreAndWait];
     } else {
-        detailViewController.list = [List findFirstByAttribute:@"title" withValue:cell.textLabel.text];
+        detailViewController.list = _lists[indexPath.row-1];
     }
 }
 

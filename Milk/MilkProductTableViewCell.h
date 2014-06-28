@@ -10,8 +10,10 @@
 
 @interface MilkProductTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) IBOutlet UITextField *titleField;
-@property (nonatomic, strong) IBOutlet UITextField *detailField;
+@property (nonatomic, weak) IBOutlet UITextField *titleField;
+@property (nonatomic, weak) IBOutlet UITextField *detailField;
+@property (nonatomic, weak) IBOutlet UILabel *quantityValueLabel;
+@property (nonatomic, weak) IBOutlet UIStepper *stepper;
 
 -(void)updateSize;
 
