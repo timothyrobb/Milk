@@ -17,6 +17,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *totalValueLabel;
 @property (nonatomic, weak) UITextField *activeTextField;
 @property (nonatomic, strong) UITextField *titleField;
+@property (nonatomic, assign) BOOL editingText;
 
 @end
 
@@ -169,6 +170,7 @@
 #pragma mark - Text Field Delegate
 
 -(void)cancelEditing:(UIBarButtonItem *)barButtonItem {
+    self.editingText = NO;
     if (_activeTextField) {
         if (_activeTextField == _titleField) {
             _titleField.text = _list.title;
@@ -180,28 +182,44 @@
         }
         
         MilkProductTableViewCell *cell = (MilkProductTableViewCell *)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:_activeTextField.tag inSection:0]];
-        Product *product = self.products[cell.tag-1];
-        
-        if (_activeTextField == cell.titleField) {
-            cell.titleField.text = product.name;
-        } else if (_activeTextField == cell.detailField) {
-            NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-            [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-            cell.detailField.text = [numberFormatter stringFromNumber:product.value];
+        if (cell) {
+            Product *product = self.products[cell.tag-1];
+            
+            if (_activeTextField == cell.titleField) {
+                cell.titleField.text = product.name;
+            } else if (_activeTextField == cell.detailField) {
+                NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+                [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+                cell.detailField.text = [numberFormatter stringFromNumber:product.value];
+            }
+            
+            [cell updateSize];
         }
         
-        [cell updateSize];
         [_activeTextField resignFirstResponder];
     }
 }
 
 -(void)applyEditing:(UIBarButtonItem *)barButtonItem {
+    self.editingText = NO;
     if (_activeTextField) {
         [_activeTextField resignFirstResponder];
     }
 }
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    self.editingText = YES;
+    if (textField != _titleField) {
+//        MilkProductTableViewCell *cell = (MilkProductTableViewCell *)[_tableView cellForRowAtIndexPath:];
+//        CGPoint point = [cell convertPoint:cell.frame.origin toView:_tableView];
+//        [_tableView setContentOffset:CGPointMake(0, cell.frame.origin.y) animated: YES];
+        [_tableView setContentInset:UIEdgeInsetsMake(0, 0, 230, 0)];
+        [_tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:textField.tag inSection:0]
+                          atScrollPosition:UITableViewScrollPositionMiddle
+                                  animated:YES];
+        [_tableView setScrollEnabled:NO];
+    }
+
     self.activeTextField = textField;
     
     UIToolbar *toolbar = [[UIToolbar alloc] init];
@@ -242,6 +260,7 @@
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
+    self.editingText = YES;
     [textField setSelectedTextRange:[textField textRangeFromPosition:textField.beginningOfDocument toPosition:textField.endOfDocument]];
 }
 
@@ -258,7 +277,10 @@
     }
     
     MilkProductTableViewCell *cell = (MilkProductTableViewCell *)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:textField.tag inSection:0]];
-    Product *product = self.products[cell.tag-1];
+    Product *product = nil;
+    if (cell) {
+        product = self.products[cell.tag-1];
+    }
     
     if (product) {
         if (textField == cell.titleField) {
@@ -297,7 +319,15 @@
     [cell updateSize];
 }
 
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+    if (!_editingText) {
+        [_tableView setContentInset:UIEdgeInsetsZero];
+        [_tableView setScrollEnabled:YES];
+    }
+}
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    self.editingText = NO;
     [textField resignFirstResponder];
     
     return YES;
