@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Zr4-8g-PNN">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
     </dependencies>
     <scenes>
@@ -169,8 +170,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="-1" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zg5-7l-cYC" userLabel="Name" customClass="MilkProductTextField">
-                                                    <rect key="frame" x="15" y="13" width="38" height="21"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDG-Z8-7Yn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="233" height="43"/>
+                                                    <state key="normal">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="selectLabel:" destination="MEx-wd-4pq" eventType="touchUpInside" id="ffa-Yg-yTN"/>
+                                                    </connections>
+                                                </button>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="-1" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zg5-7l-cYC" userLabel="Name" customClass="MilkProductTextField">
+                                                    <rect key="frame" x="15" y="13" width="218" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="yes" returnKeyType="done"/>
                                                     <connections>
@@ -178,8 +188,11 @@
                                                         <outlet property="delegate" destination="MEx-wd-4pq" id="PcM-DQ-tQZ"/>
                                                     </connections>
                                                 </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="-2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2.00" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I8u-Sa-MZI" userLabel="Value" customClass="MilkProductTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="-2" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2.00" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I8u-Sa-MZI" userLabel="Value" customClass="MilkProductTextField">
                                                     <rect key="frame" x="238" y="13" width="38" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="rIl-YW-KpN"/>
+                                                    </constraints>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="yes" keyboardType="decimalPad" returnKeyType="done"/>
@@ -196,12 +209,17 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="I8u-Sa-MZI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zg5-7l-cYC" secondAttribute="trailing" priority="750" constant="5" id="0Mo-aN-6wR"/>
                                                 <constraint firstItem="I8u-Sa-MZI" firstAttribute="top" secondItem="LDQ-Lw-zYQ" secondAttribute="top" constant="13" id="9TJ-65-oma"/>
+                                                <constraint firstItem="fbq-wT-pPG" firstAttribute="leading" secondItem="I8u-Sa-MZI" secondAttribute="trailing" constant="5" id="A2M-D5-Ag5"/>
+                                                <constraint firstItem="dDG-Z8-7Yn" firstAttribute="top" secondItem="LDQ-Lw-zYQ" secondAttribute="top" id="Gd9-ft-u7d"/>
                                                 <constraint firstItem="zg5-7l-cYC" firstAttribute="top" secondItem="LDQ-Lw-zYQ" secondAttribute="top" constant="13" id="Jm6-XK-bQv"/>
+                                                <constraint firstItem="I8u-Sa-MZI" firstAttribute="leading" secondItem="zg5-7l-cYC" secondAttribute="trailing" constant="5" id="KHW-VX-M09"/>
+                                                <constraint firstAttribute="bottom" secondItem="dDG-Z8-7Yn" secondAttribute="bottom" id="PR1-mo-tHG"/>
                                                 <constraint firstItem="zg5-7l-cYC" firstAttribute="leading" secondItem="LDQ-Lw-zYQ" secondAttribute="leading" constant="15" id="Vry-Wn-6CG"/>
+                                                <constraint firstItem="dDG-Z8-7Yn" firstAttribute="leading" secondItem="LDQ-Lw-zYQ" secondAttribute="leading" id="c6G-ge-Si8"/>
                                                 <constraint firstItem="fbq-wT-pPG" firstAttribute="leading" secondItem="I8u-Sa-MZI" secondAttribute="trailing" constant="5" id="gzC-nG-NIu"/>
                                                 <constraint firstAttribute="trailing" secondItem="fbq-wT-pPG" secondAttribute="trailing" constant="15" id="pvx-ig-yf6"/>
+                                                <constraint firstItem="I8u-Sa-MZI" firstAttribute="leading" secondItem="dDG-Z8-7Yn" secondAttribute="trailing" constant="5" id="zee-iM-bDK"/>
                                                 <constraint firstItem="fbq-wT-pPG" firstAttribute="top" secondItem="LDQ-Lw-zYQ" secondAttribute="top" constant="13" id="ziM-6B-br0"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -209,6 +227,7 @@
                                             <outlet property="detailField" destination="I8u-Sa-MZI" id="vLr-go-12m"/>
                                             <outlet property="quantityValueLabel" destination="fbq-wT-pPG" id="WPe-BS-296"/>
                                             <outlet property="titleField" destination="zg5-7l-cYC" id="Nzc-d1-ZC7"/>
+                                            <outlet property="titleFieldButton" destination="dDG-Z8-7Yn" id="hc6-M2-bsI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

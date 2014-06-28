@@ -13,6 +13,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *titleField;
 @property (nonatomic, weak) IBOutlet UITextField *detailField;
 @property (nonatomic, weak) IBOutlet UILabel *quantityValueLabel;
+@property (nonatomic, weak) IBOutlet UIButton *titleFieldButton;
 
 -(void)updateSize;
 

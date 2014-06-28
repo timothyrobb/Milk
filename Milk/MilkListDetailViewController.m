@@ -79,6 +79,11 @@
     [self updateTotal];
 }
 
+-(IBAction)selectLabel:(UIButton *)button {
+    MilkProductTableViewCell *cell = (MilkProductTableViewCell *)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:button.tag inSection:0]];
+    [cell.titleField becomeFirstResponder];
+}
+
 #pragma mark - Table View Data Source
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -100,6 +105,7 @@
         cell.titleField.tag = indexPath.row;
         cell.detailField.tag = indexPath.row;
         cell.quantityValueLabel.tag = indexPath.row;
+        cell.titleFieldButton.tag = indexPath.row;
         
         cell.titleField.text = product.name;
         
