@@ -13,5 +13,6 @@
 @interface MilkListDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic, strong) List *list;
+@property (nonatomic, strong) IBOutlet UIView *emptyView;
 
 @end

@@ -27,6 +27,7 @@
 
 -(void)reloadData {
     self.lists = [List findAllSortedBy:@"createdDate" ascending:NO];
+    _emptyView.hidden = (_lists.count > 0);
 }
 
 #pragma mark - Table View Data Source

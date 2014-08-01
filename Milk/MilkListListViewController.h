@@ -11,5 +11,6 @@
 @interface MilkListListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) IBOutlet UIView *emptyView;
 
 @end

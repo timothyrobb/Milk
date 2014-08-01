@@ -53,6 +53,7 @@
 }
 
 -(void)updateTotal {
+    _emptyView.hidden = (_list.products.count > 0);
     double total = 0.0;
     for (Product *product in _list.products) {
         total += product.totalValue.doubleValue;
@@ -120,6 +121,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    _emptyView.hidden = (_list.products.count > 0);
     if (indexPath.row != 0) {
         MilkProductTableViewCell *milkCell = (MilkProductTableViewCell *)cell;
         [milkCell updateSize];
