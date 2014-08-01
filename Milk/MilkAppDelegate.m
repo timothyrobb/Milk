@@ -15,6 +15,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 //	[TestFlight takeOff:@"dc1ea7a7-e4b3-4dc6-b1e3-8fbd18f34028"];
     [MagicalRecord setupAutoMigratingCoreDataStack];
+    [Crashlytics startWithAPIKey:@"9454b0e9cf8d7424a89af9eebc725d9a1cf82090"];
 
     return YES;
 }

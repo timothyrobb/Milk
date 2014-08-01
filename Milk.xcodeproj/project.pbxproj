@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9090C44A195EC09400DF3C25 /* MilkColours+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9090C449195EC09400DF3C25 /* MilkColours+UIColor.m */; };
+		909243C5196F3CF1004420D6 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909243C4196F3CF1004420D6 /* Crashlytics.framework */; };
 		9093DD2318D3D458004A6CC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9093DD2218D3D458004A6CC5 /* Foundation.framework */; };
 		9093DD2518D3D458004A6CC5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9093DD2418D3D458004A6CC5 /* CoreGraphics.framework */; };
 		9093DD2718D3D458004A6CC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9093DD2618D3D458004A6CC5 /* UIKit.framework */; };
@@ -70,6 +71,7 @@
 /* Begin PBXFileReference section */
 		9090C448195EC09400DF3C25 /* MilkColours+UIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MilkColours+UIColor.h"; sourceTree = "<group>"; };
 		9090C449195EC09400DF3C25 /* MilkColours+UIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MilkColours+UIColor.m"; sourceTree = "<group>"; };
+		909243C4196F3CF1004420D6 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		9093DD1F18D3D458004A6CC5 /* Milk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9093DD2218D3D458004A6CC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9093DD2418D3D458004A6CC5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -165,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9093DD2518D3D458004A6CC5 /* CoreGraphics.framework in Frameworks */,
+				909243C5196F3CF1004420D6 /* Crashlytics.framework in Frameworks */,
 				9093DD2718D3D458004A6CC5 /* UIKit.framework in Frameworks */,
 				9093DD6C18D4317F004A6CC5 /* Reveal.framework in Frameworks */,
 				9093DD2318D3D458004A6CC5 /* Foundation.framework in Frameworks */,
@@ -212,6 +215,7 @@
 				9093DD2418D3D458004A6CC5 /* CoreGraphics.framework */,
 				9093DD2618D3D458004A6CC5 /* UIKit.framework */,
 				9093DD4118D3D458004A6CC5 /* XCTest.framework */,
+				909243C4196F3CF1004420D6 /* Crashlytics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -393,6 +397,7 @@
 				9093DD1B18D3D458004A6CC5 /* Sources */,
 				9093DD1C18D3D458004A6CC5 /* Frameworks */,
 				9093DD1D18D3D458004A6CC5 /* Resources */,
+				909243C3196F3B1A004420D6 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -475,6 +480,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		909243C3196F3B1A004420D6 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 9454b0e9cf8d7424a89af9eebc725d9a1cf82090 2d63115e5571817716941f7f37191ee67e71ce06c95fa8f9c50cf6aadd4a5b0b";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9093DD1B18D3D458004A6CC5 /* Sources */ = {
@@ -644,6 +666,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_APPS_DIR)/Reveal.app/Contents/SharedSupport/iOS-Libraries",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Milk/Milk-Prefix.pch";
@@ -662,6 +685,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_APPS_DIR)/Reveal.app/Contents/SharedSupport/iOS-Libraries",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Milk/Milk-Prefix.pch";
