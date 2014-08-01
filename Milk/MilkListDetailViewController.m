@@ -160,6 +160,8 @@
                 
                 MilkProductTableViewCell *newCell = (MilkProductTableViewCell *)[tableView cellForRowAtIndexPath:newIndexPath];
                 [newCell.detailField becomeFirstResponder];
+                
+                [tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
             } else {
             	NSLog(@"Error creating new product: %@",error.localizedDescription);
             }
