@@ -28,9 +28,9 @@
 @dynamic list;
 
 +(id)createEntity {
-    List *list = [super createEntity];
-    list.createdDate = [NSDate date];
-    return list;
+    Product *product = [super createEntity];
+    product.createdDate = [NSDate date];
+    return product;
 }
 
 -(NSNumber *)totalValue {
